@@ -73,10 +73,6 @@ patients_dead <- patients_dead[which(!is.na(patients_dead$clinical_stage)), ]
 patients_alive <- patients_numeric[which(patients_numeric$vital_status == 1), ]
 names(patients_alive)[17] <- paste("days_lived")
 
-#patients_numeric$PAK4dummy_var = factor(patients_numeric$PAK4dummy_var, 
-                                        #levels = c("0", "1"), 
-                                        #labels = c("low", "high"))
-
 #####removing outliers#####
 patients_numeric <- patients_numeric[-which(patients_numeric$days_to_death > 4000), ]
 

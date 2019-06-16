@@ -31,7 +31,7 @@ patients_dead <- patients_all[which(patients_all$vital_status == "dead"), ]
 ggplot(patients_dead, aes(ROR1.expression_log2)) +
   geom_histogram(binwidth = 0.1)
 
-qplot(clinical_stage, data = patients_numeric) #CLINICAL STAGE DUMMY VARIABLE?
+qplot(clinical_stage, data = patients_numeric) 
 qplot(age_at_initial_pathologic_diagnosis, days_to_death, data= patients_numeric)
 qplot(clinical_stage, days_lived, data= patients_alive)
 

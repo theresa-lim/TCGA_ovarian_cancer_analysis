@@ -28,7 +28,6 @@ clinical_master = clinical_master[which(!clinical_master$tcga_participant_barcod
 clinical_master = clinical_master[which(!clinical_master$tcga_participant_barcode == "TCGA-29-2414"), ]
 
 gene_list = c("BRCA1", "BRCA2", "PTEN", "CLASP1","PAK1", "PAK2", "PAK4", "ROR1", "TP53") 
-#gene_list1 = c("CDKN2A", "MAP2K4", "MAGEC1", "RIMBP2", "DIRAS3", "PEG3", "DAB2", "NF1", "ARID1A", "OPCML", "PLAGL1") from paper
 vital_list = c("dead", "alive")
 patients_all = list()
 
@@ -67,9 +66,6 @@ for(i in 1:2){
 patients_all = do.call(rbind, patients_all)
 
 rm(patients_mRNA, patients_temp)
-
-#IMPORT MUTATION DS???
-#mutations <- Analyses.Mutation.MAF(format = "json", cohort = cancer.Type, gene = gene_list)
 
 write.csv(patients_numeric, file = "patient_data.csv")
 
